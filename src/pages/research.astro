@@ -1,0 +1,234 @@
+
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const researchAreas = [
+  {
+    number: '01',
+    title: 'Plant Proteomics & Protein Complexes',
+    description:
+      'Investigating protein abundance, native protein complexes, and protein–protein interactions to understand the molecular regulation of plant biological processes.',
+    keywords: [
+      'LC-MS/MS',
+      'BN-PAGE',
+      'Complexome Profiling',
+      'Protein–Protein Interactions'
+    ]
+  },
+  {
+    number: '02',
+    title: 'Nitrogen Metabolism in Plants',
+    description:
+      'Exploring nitrate-responsive molecular mechanisms in maize roots, with particular interest in nitrogen assimilation, protein complexes, and carbon–nitrogen metabolic interactions.',
+    keywords: [
+      'Maize',
+      'Nitrate Response',
+      'Nitrogen Assimilation',
+      'Carbon–Nitrogen Interactions'
+    ]
+  },
+  {
+    number: '03',
+    title: 'Plant Stress Physiology',
+    description:
+      'Studying physiological and biochemical responses of crop plants to environmental stresses, including salinity and waterlogging, to support crop resilience.',
+    keywords: [
+      'Salinity',
+      'Waterlogging',
+      'Stress Adaptation',
+      'Crop Resilience'
+    ]
+  },
+  {
+    number: '04',
+    title: 'Sustainable Agriculture',
+    description:
+      'Connecting fundamental plant science with agronomic research to support sustainable crop production, resource-use efficiency, and climate-resilient agriculture.',
+    keywords: [
+      'Sustainable Crop Production',
+      'Resource-Use Efficiency',
+      'Climate Resilience'
+    ]
+  }
+];
+---
+
+
+<BaseLayout
+  title="Research"
+  description="Explore the research interests of Abdul Awal Chowdhury Masud, focusing on plant proteomics, maize root nitrate responses, native protein complexes, nitrogen metabolism, carbon–nitrogen interactions, and plant stress physiology."
+>
+
+
+  <section class="research-hero">
+    <p class="eyebrow">Scientific Research</p>
+
+    <h1>Research & Scientific Interests</h1>
+
+    <p class="lead">
+      Understanding plant molecular mechanisms,
+      protein complexes, and physiological responses
+      to nutrient availability and environmental stress.
+    </p>
+  </section>
+
+  <section class="research-section">
+    <h2>Research Focus</h2>
+
+    <p class="section-description">
+      My research integrates plant proteomics,
+      molecular biology, and stress physiology
+      to investigate how plants regulate their
+      biological processes under changing
+      environmental and nutritional conditions.
+    </p>
+
+    <div class="research-grid">
+      {researchAreas.map((area) => (
+        <article class="research-card">
+          <span class="research-number">
+            {area.number}
+          </span>
+
+          <h3>{area.title}</h3>
+
+          <p>{area.description}</p>
+
+          <div class="keywords">
+            {area.keywords.map((keyword) => (
+              <span class="keyword">
+                {keyword}
+              </span>
+            ))}
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="research-section">
+    <h2>Current Research Direction</h2>
+
+    <div class="highlight">
+      <h3>
+        Native Protein Complexes in Maize Roots
+      </h3>
+
+      <p>
+        My doctoral research investigates
+        nitrate-responsive protein complexes
+        in maize roots using proteomics and
+        native protein separation approaches.
+      </p>
+
+      <p>
+        The research aims to improve our
+        understanding of protein organization
+        and molecular responses associated
+        with plant nitrogen metabolism.
+      </p>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .research-hero {
+    padding: 65px 0 40px;
+  }
+
+  .eyebrow {
+    color: #087e77;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .lead {
+    max-width: 800px;
+    font-size: 1.2rem;
+    color: #526477;
+  }
+
+  .research-section {
+    padding: 30px 0;
+  }
+
+  .section-description {
+    max-width: 850px;
+    line-height: 1.8;
+  }
+
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+    margin-top: 30px;
+  }
+
+  .research-card {
+    border: 1px solid #e1e8ed;
+    border-radius: 12px;
+    padding: 30px;
+    background: #fbfcfd;
+  }
+
+  .research-number {
+    color: #087e77;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  .research-card h3 {
+    font-size: 1.3rem;
+    margin: 14px 0;
+    color: #163b4b;
+  }
+
+  .research-card p {
+    line-height: 1.8;
+  }
+
+  .keywords {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .keyword {
+    background: #e9f5f3;
+    color: #087e77;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+
+  .highlight {
+    background: #f1f8f7;
+    border-left: 4px solid #087e77;
+    border-radius: 8px;
+    padding: 30px;
+    margin-top: 20px;
+  }
+
+  .highlight h3 {
+    margin-top: 0;
+  }
+
+  @media (max-width: 768px) {
+    .research-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .research-hero {
+      padding-top: 35px;
+    }
+
+    .research-card {
+      padding: 22px;
+    }
+  }
+</style>

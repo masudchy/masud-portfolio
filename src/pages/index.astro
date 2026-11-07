@@ -1,16 +1,293 @@
+
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const researchAreas = [
+  {
+    title: 'Plant Proteomics',
+    description: 'Exploring native protein complexes and molecular responses in plants.',
+  },
+  {
+    title: 'Nitrogen Metabolism',
+    description: 'Investigating nitrate-responsive mechanisms and carbon–nitrogen interactions.',
+  },
+  {
+    title: 'Plant Stress Physiology',
+    description: 'Understanding plant adaptation to environmental challenges.',
+  },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+
+<BaseLayout
+  title="Home"
+  description="Official academic portfolio of Abdul Awal Chowdhury Masud, PhD researcher at the University of Milan and Assistant Professor at Sher-e-Bangla Agricultural University. Explore research in plant proteomics, nitrogen metabolism, and plant stress physiology."
+>
+
+
+  <section class="hero">
+
+<div class="profile-photo">
+  <img
+    src="/profile.png"
+    alt="Portrait of Abdul Awal Chowdhury Masud"
+    width="260"
+    height="260"
+  />
+</div>
+
+    <p class="eyebrow">
+      Researcher · Educator · Plant Scientist
+    </p>
+
+    <h1>Abdul Awal<br />Chowdhury Masud</h1>
+
+    <h2>Plant Proteomics Researcher & Academic</h2>
+
+    <p>
+      PhD Researcher at the University of Milan, Italy,
+      and Assistant Professor at Sher-e-Bangla Agricultural
+      University, Bangladesh.
+    </p>
+
+    <p>
+      My research focuses on plant proteomics,
+      nitrogen metabolism, and plant responses
+      to environmental stress.
+    </p>
+
+    <a class="button" href="#research">
+      Explore My Research
+    </a>
+  </section>
+
+  <section id="research">
+    <h2>Research Interests</h2>
+
+    <div class="research-grid">
+      {researchAreas.map((area) => (
+        <article class="research-card">
+          <h3>{area.title}</h3>
+          <p>{area.description}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section>
+    <h2>Academic Journey</h2>
+
+    <p>
+      My academic work connects molecular plant science
+      with sustainable agriculture and crop improvement.
+    </p>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: 65px 0;
+    max-width: 850px;
+  }
+
+  .eyebrow {
+    color: #087e77;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+  }
+
+  .hero h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    max-width: 700px;
+  }
+
+  .hero .button {
+    margin-top: 20px;
+  }
+
+  section {
+    padding-bottom: 55px;
+  }
+
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 25px;
+  }
+
+  .research-card {
+    border: 1px solid #e1e8ed;
+    background: #fbfcfd;
+    padding: 25px;
+    border-radius: 12px;
+  }
+
+  .research-card h3 {
+    color: #163b4b;
+    margin-top: 0;
+  }
+
+  @media (max-width: 768px) {
+    .research-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero {
+      padding: 35px 0;
+    }
+  }
+
+/* Professional Homepage Hero */
+
+.hero {
+  background: linear-gradient(
+    135deg,
+    #f0faf8 0%,
+    #ffffff 65%
+  );
+  border-radius: 20px;
+  padding: 65px 45px;
+  margin: 20px 0 50px;
+  max-width: 100%;
+}
+
+.hero h1 {
+  font-size: clamp(2.7rem, 5vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  line-height: 1.12;
+  margin: 20px 0;
+}
+
+.hero h2 {
+  color: #087e77;
+  font-weight: 600;
+}
+
+.hero .button {
+  box-shadow: 0 5px 15px rgba(8, 126, 119, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.hero .button:hover {
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 35px 22px;
+    border-radius: 12px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+    letter-spacing: -0.5px;
+  }
+}
+
+/* Professional Circular Profile Photo */
+
+.profile-photo {
+  float: right;
+  width: 260px;
+  height: 260px;
+  margin: 0 0 25px 35px;
+}
+
+.profile-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  border: 6px solid #ffffff;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+@media (max-width: 768px) {
+  .profile-photo {
+    float: none;
+    width: 190px;
+    height: 190px;
+    margin: 0 auto 30px;
+  }
+}
+
+/* Professional Research Interest Cards */
+
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.research-card {
+  background: #ffffff;
+  border: 1px solid #e1e8ed;
+  border-top: 4px solid #087e77;
+  border-radius: 14px;
+  padding: 30px 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.04);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.research-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.1);
+}
+
+.research-card h3 {
+  color: #163b4b;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin: 0 0 15px;
+}
+
+.research-card p {
+  color: #526477;
+  font-size: 0.98rem;
+  line-height: 1.75;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .research-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .research-card {
+    padding: 25px 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .research-card {
+    transition: none;
+  }
+
+  .research-card:hover {
+    transform: none;
+  }
+}
+
+</style>

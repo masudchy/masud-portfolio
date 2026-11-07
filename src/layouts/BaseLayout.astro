@@ -1,0 +1,126 @@
+
+
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = 'Abdul Awal Chowdhury Masud is a plant scientist and academic researching plant proteomics, nitrogen metabolism, and plant stress physiology.'
+} = Astro.props;
+---
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} | Abdul Awal Chowdhury Masud</title>
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+<meta name="description" content={description} />
+
+<meta
+  property="og:url"
+  content={new URL(Astro.url.pathname, 'https://masudchyinfo.com').href}
+/>
+
+<!-- Canonical URL for Search Engines -->
+<link
+  rel="canonical"
+  href={new URL(Astro.url.pathname, 'https://masudchyinfo.com').href}
+/>
+
+
+<!-- Open Graph Metadata -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content={`${title} | Abdul Awal Chowdhury Masud`} />
+<meta property="og:description" content={description} />
+
+  </head>
+
+  <body>
+    
+<header>
+  <h2>Masud Chy.</h2>
+
+  <details class="mobile-menu">
+    <summary>☰ Menu</summary>
+
+    <nav aria-label="Mobile navigation">
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/research/">Research</a>
+      <a href="/publications/">Publications</a>
+      <a href="/teaching/">Teaching</a>
+      <a href="/achievements/">Achievements</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </details>
+
+  <nav class="desktop-menu" aria-label="Main navigation">
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/research/">Research</a>
+    <a href="/publications/">Publications</a>
+    <a href="/teaching/">Teaching</a>
+    <a href="/achievements/">Achievements</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+</header>
+
+
+    <main>
+      <slot />
+    </main>
+
+
+<footer class="site-footer">
+  <div class="footer-content">
+
+    <div class="footer-profile">
+      <h3>Abdul Awal Chowdhury Masud</h3>
+
+      <p>
+        Plant Proteomics Researcher & Academic
+      </p>
+
+      <p>
+        University of Milan, Italy
+      </p>
+
+      <p>
+        Sher-e-Bangla Agricultural University,
+        Bangladesh
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+
+      <a href="/">Home</a>
+      <a href="/about/">About Me</a>
+      <a href="/research/">Research</a>
+      <a href="/publications/">Publications</a>
+      <a href="/contact/">Contact</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>
+      © {new Date().getFullYear()}
+      Abdul Awal Chowdhury Masud.
+      All rights reserved.
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>

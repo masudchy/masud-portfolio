@@ -1,0 +1,207 @@
+
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const teachingAreas = [
+  {
+    title: 'Agronomy & Crop Science',
+    description:
+      'Teaching and academic interests in crop production, crop management, and sustainable agronomic practices.'
+  },
+  {
+    title: 'Plant Physiology',
+    description:
+      'Exploring physiological processes that regulate plant growth, development, and responses to environmental conditions.'
+  },
+  {
+    title: 'Plant Molecular Biology',
+    description:
+      'Connecting fundamental molecular mechanisms with plant function, metabolism, and crop improvement.'
+  },
+  {
+    title: 'Environmental Stress & Climate Resilience',
+    description:
+      'Understanding plant responses to abiotic stresses and the implications for climate-resilient agriculture.'
+  }
+];
+
+const teachingPrinciples = [
+  'Student-centered and interactive learning',
+  'Integration of research into teaching',
+  'Critical thinking and scientific reasoning',
+  'Practical and laboratory-based learning'
+];
+---
+
+
+<BaseLayout
+  title="Teaching"
+  description="Explore the teaching experience and academic interests of Abdul Awal Chowdhury Masud, Assistant Professor of Agronomy at Sher-e-Bangla Agricultural University, Bangladesh, with interests in plant biology, agronomy, plant physiology, and molecular plant science."
+>
+
+
+  <section class="teaching-hero">
+    <p class="eyebrow">Academic Teaching</p>
+
+    <h1>Teaching & Mentorship</h1>
+
+    <p class="lead">
+      Supporting the next generation of agricultural
+      scientists through research-informed teaching,
+      practical learning, and scientific curiosity.
+    </p>
+  </section>
+
+  <section class="teaching-section">
+    <h2>Teaching Profile</h2>
+
+    <p>
+      I am an Assistant Professor in the Department
+      of Agronomy at Sher-e-Bangla Agricultural
+      University, Bangladesh.
+    </p>
+
+    <p>
+      My academic interests encompass agronomy,
+      plant physiology, molecular plant science,
+      and sustainable agricultural production.
+    </p>
+  </section>
+
+  <section class="teaching-section">
+    <h2>Teaching Philosophy</h2>
+
+    <p>
+      My teaching approach emphasizes conceptual
+      understanding, active participation, and the
+      application of scientific knowledge to
+      real-world agricultural challenges.
+    </p>
+
+    <div class="principles">
+      {teachingPrinciples.map((principle) => (
+        <div class="principle">
+          <span class="check">✓</span>
+          <span>{principle}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="teaching-section">
+    <h2>Teaching & Subject Areas</h2>
+
+    <div class="teaching-grid">
+      {teachingAreas.map((area) => (
+        <article class="teaching-card">
+          <h3>{area.title}</h3>
+          <p>{area.description}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="teaching-section">
+    <h2>Academic Mentorship</h2>
+
+    <p>
+      I value academic mentorship, collaborative
+      learning, and supporting students in
+      developing scientific thinking and
+      research skills.
+    </p>
+
+    <p class="note">
+      Verified student supervision, thesis
+      mentoring, and academic training activities
+      will be added to this section.
+    </p>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .teaching-hero {
+    padding: 65px 0 40px;
+  }
+
+  .eyebrow {
+    color: #087e77;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .lead {
+    max-width: 800px;
+    font-size: 1.2rem;
+    color: #526477;
+  }
+
+  .teaching-section {
+    padding: 30px 0;
+    max-width: 1050px;
+  }
+
+  .teaching-section p {
+    line-height: 1.8;
+  }
+
+  .principles {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-top: 25px;
+  }
+
+  .principle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: #f1f8f7;
+    border-radius: 8px;
+  }
+
+  .check {
+    color: #087e77;
+    font-weight: 700;
+  }
+
+  .teaching-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 25px;
+  }
+
+  .teaching-card {
+    border: 1px solid #e1e8ed;
+    border-radius: 12px;
+    background: #fbfcfd;
+    padding: 26px;
+  }
+
+  .teaching-card h3 {
+    margin-top: 0;
+    color: #163b4b;
+  }
+
+  .note {
+    color: #64748b;
+    font-style: italic;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 768px) {
+    .teaching-grid,
+    .principles {
+      grid-template-columns: 1fr;
+    }
+
+    .teaching-hero {
+      padding-top: 35px;
+    }
+  }
+</style>

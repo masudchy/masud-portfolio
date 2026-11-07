@@ -1,0 +1,175 @@
+
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const affiliations = [
+  {
+    title: 'University of Milan',
+    department: 'Department of Agricultural and Environmental Sciences',
+    location: 'Milan, Italy',
+    role: 'PhD Researcher'
+  },
+  {
+    title: 'Sher-e-Bangla Agricultural University',
+    department: 'Department of Agronomy',
+    location: 'Dhaka, Bangladesh',
+    role: 'Assistant Professor'
+  }
+];
+
+const collaborationAreas = [
+  'Plant Proteomics & Molecular Biology',
+  'Plant Nitrogen Metabolism',
+  'Plant Stress Physiology',
+  'Agricultural Research & Education'
+];
+---
+
+
+<BaseLayout
+  title="Contact"
+  description="Contact Abdul Awal Chowdhury Masud, plant proteomics researcher at the University of Milan and Assistant Professor at Sher-e-Bangla Agricultural University, for academic inquiries, research collaboration, and professional communication."
+>
+
+
+  <section class="contact-hero">
+    <p class="eyebrow">Get in Touch</p>
+
+    <h1>Contact & Collaboration</h1>
+
+    <p class="lead">
+      I welcome academic communication,
+      interdisciplinary research collaboration,
+      and opportunities for scientific exchange.
+    </p>
+  </section>
+
+  <section class="contact-section">
+    <h2>Institutional Affiliations</h2>
+
+    <div class="affiliation-grid">
+      {affiliations.map((item) => (
+        <article class="affiliation-card">
+          <h3>{item.title}</h3>
+
+          <p class="role">{item.role}</p>
+
+          <p>{item.department}</p>
+
+          <p>{item.location}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <h2>Research Collaboration</h2>
+
+    <p>
+      I am interested in connecting with
+      researchers and academic institutions
+      working in the following areas:
+    </p>
+
+    <ul class="collaboration-list">
+      {collaborationAreas.map((area) => (
+        <li>{area}</li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="contact-section">
+    <h2>Professional Contact</h2>
+
+    <div class="contact-box">
+      <h3>Let's Connect</h3>
+
+      <p>
+        Verified institutional email addresses
+        and academic profile links will be
+        added here.
+      </p>
+
+      <p>
+        You can also explore my research
+        and publications through this website.
+      </p>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .contact-hero {
+    padding: 65px 0 40px;
+  }
+
+  .eyebrow {
+    color: #087e77;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .lead {
+    max-width: 800px;
+    font-size: 1.2rem;
+  }
+
+  .contact-section {
+    padding: 30px 0;
+  }
+
+  .affiliation-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 25px;
+  }
+
+  .affiliation-card {
+    padding: 28px;
+    border: 1px solid #e1e8ed;
+    border-radius: 12px;
+    background: #fbfcfd;
+  }
+
+  .affiliation-card h3 {
+    margin-top: 0;
+    color: #163b4b;
+  }
+
+  .role {
+    color: #087e77;
+    font-weight: 700;
+  }
+
+  .collaboration-list {
+    padding-left: 25px;
+    line-height: 2;
+    color: #526477;
+  }
+
+  .contact-box {
+    background: #f1f8f7;
+    border-left: 4px solid #087e77;
+    border-radius: 8px;
+    padding: 30px;
+    margin-top: 20px;
+  }
+
+  .contact-box h3 {
+    margin-top: 0;
+  }
+
+  @media (max-width: 768px) {
+    .contact-hero {
+      padding-top: 35px;
+    }
+
+    .affiliation-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

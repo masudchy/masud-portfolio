@@ -1,0 +1,141 @@
+
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const researchInterests = [
+  'Plant Proteomics and Protein Complexes',
+  'Plant Nitrogen Metabolism',
+  'Plant Stress Physiology',
+  'Molecular Plant Biology',
+  'Sustainable Agriculture',
+];
+---
+
+
+<BaseLayout
+  title="About Me"
+  description="Learn about Abdul Awal Chowdhury Masud, a plant scientist, PhD researcher at the University of Milan, Italy, and Assistant Professor at Sher-e-Bangla Agricultural University, Bangladesh. Explore his academic background and research interests."
+>
+
+  <section class="about-hero">
+    <p class="eyebrow">About Me</p>
+
+    <h1>Researcher, Educator & Plant Scientist</h1>
+
+    <p class="lead">
+      I am Abdul Awal Chowdhury Masud, a plant scientist
+      and academic working at the intersection of plant
+      proteomics, molecular biology, and sustainable agriculture.
+    </p>
+  </section>
+
+  <section class="about-section">
+    <h2>Academic Profile</h2>
+
+    <p>
+      I am a PhD researcher in the Agriculture, Environment
+      and Bioenergy doctoral programme at the University of
+      Milan, Italy, and an Assistant Professor in the
+      Department of Agronomy at Sher-e-Bangla Agricultural
+      University, Bangladesh.
+    </p>
+
+    <p>
+      My research focuses on understanding plant molecular
+      and physiological responses to nutrient availability
+      and environmental stresses, with particular emphasis
+      on proteomics and native protein complexes.
+    </p>
+  </section>
+
+  <section class="about-section">
+    <h2>Research Interests</h2>
+
+    <div class="interest-grid">
+      {researchInterests.map((interest) => (
+        <div class="interest-card">
+          {interest}
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="about-section">
+    <h2>Research Vision</h2>
+
+    <p>
+      My research interests aim to connect fundamental
+      molecular discoveries with practical agricultural
+      applications, contributing to improved nutrient
+      use efficiency, crop resilience, and sustainable
+      food production.
+    </p>
+  </section>
+
+  <section class="about-section">
+    <h2>Academic Engagement</h2>
+
+    <p>
+      Alongside research, I am interested in university
+      teaching, scientific communication, interdisciplinary
+      collaboration, and capacity building in agricultural
+      sciences.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .about-hero {
+    padding: 65px 0 35px;
+  }
+
+  .eyebrow {
+    color: #087e77;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+
+  .lead {
+    font-size: 1.2rem;
+    max-width: 800px;
+    color: #526477;
+  }
+
+  .about-section {
+    padding: 30px 0;
+    max-width: 950px;
+  }
+
+  .about-section p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  .interest-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 25px;
+  }
+
+  .interest-card {
+    padding: 20px;
+    border: 1px solid #e1e8ed;
+    border-radius: 10px;
+    background: #fbfcfd;
+    font-weight: 600;
+    color: #163b4b;
+  }
+
+  @media (max-width: 768px) {
+    .about-hero {
+      padding-top: 35px;
+    }
+
+    .interest-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
